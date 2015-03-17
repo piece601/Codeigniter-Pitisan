@@ -2,7 +2,9 @@
     Codeigniter Command Line Tool.
     Like Laravel Artisan.
     It can use command line to create Controller Model View in quickly.
-
+# Tutorial
+    Video in here: http://youtu.be/ciHetNoqTH4
+    Sorry about my english skill so bad.
 # Install
     Step1. Open terminal or Download this zip.
     Step2. Move application/controllers/Pitisan.php in your project application/controllers.
