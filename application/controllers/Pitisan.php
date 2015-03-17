@@ -226,9 +226,4 @@ class Pitisan extends CI_Controller {
 		return true;
 	}
 
-	public function test($value='')
-	{
-		var_dump($this->input->get());
-	}
-
 }
