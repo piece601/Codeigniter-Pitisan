@@ -15,3 +15,7 @@ Codeigniter Command Line Tool, like Laravel Artisan, it can use command to creat
   
 # Best Practice ( Create alias to your ~/.bash_profile)
     alias pitisan="php index.php pitisan"
+
+# Most Important
+    Give me a start ~
+    Thank you~
