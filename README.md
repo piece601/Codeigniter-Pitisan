@@ -21,5 +21,5 @@
     alias pitisan="php index.php pitisan"
 
 # Most Important
-    Give me a start ~
+    Give me a star ~
     Thank you~
