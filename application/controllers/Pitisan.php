@@ -67,10 +67,10 @@ class Pitisan extends CI_Controller {
 		$name = explode('/', $name)[count(explode('/', $name))-1]; // Find the end of array
 		$data = "<?php\n\nclass ".$name."_model extends ".$extendsName." {\n";
 		if ( isset($table) ) {
-			$data .= '	protected $table = \''.$table."'\n";
+			$data .= '	protected $table = \''.$table."';\n";
 		}
 		if ( isset($primaryKey) ) {
-			$data .= '	protected $primaryKey = \''.$primaryKey."'\n";
+			$data .= '	protected $primaryKey = \''.$primaryKey."';\n";
 		}
 		$data .= "\n	public function __construct()\n";
 		$data .= "	{\n";
@@ -181,7 +181,7 @@ class Pitisan extends CI_Controller {
 
 		// File exist.
 		if ( file_exists(PITISANPATH.'models/'.$path.'_model.php') ) {
-			echo "This controller file already exists.\n";
+			echo "This model file already exists.\n";
 			return false;
 		}
 		// Actually write file.
