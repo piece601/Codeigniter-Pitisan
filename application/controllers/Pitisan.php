@@ -85,9 +85,7 @@ class Pitisan extends CI_Controller {
 	{
 		$data = '';
 		foreach ($params as $key => $value) {
-			$data .= "<?php require_once PITISANPATH.'views/".
-								str_replace('.','/', $value).
-								".php' ?>\n";
+			$data .= "<?php require_once '".str_replace('.','/', $value).".php' ?>\n";
 		}
 		return $data;
 	}
