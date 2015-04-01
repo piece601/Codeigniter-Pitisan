@@ -1,4 +1,5 @@
 <?php
+
 /*
  * A tool can use command line to create Controller Model View etc.
  * 
@@ -6,13 +7,6 @@
  * @link https://github.com/piece601/Codeigniter-Pitisan
  * @copyright Copyright (c) 2015, Piece Chao <https://github.com/piece601> 
  */
-
-// Verify the Codeigniter version in order to define operation path.
-if (substr(CI_VERSION, 0,1) == 3) {
-	define('PITISANPATH', APPPATH);
-} else {
-	define('PITISANPATH', FCPATH.APPPATH);
-}
 
 class Pitisan extends CI_Controller {
 	public function __construct()
@@ -85,7 +79,7 @@ class Pitisan extends CI_Controller {
 	{
 		$data = '';
 		foreach ($params as $key => $value) {
-			$data .= "<?php require_once '".str_replace('.','/', $value).".php' ?>\n";
+			$data .= "<?php require_once VIEWPATH.'".str_replace('.','/', $value).".php' ?>\n";
 		}
 		return $data;
 	}
@@ -93,7 +87,7 @@ class Pitisan extends CI_Controller {
 	// recursive create folder and return file path
 	protected function _folder_creator($fileName, $mvc)
 	{
-		$folder = PITISANPATH.$mvc.'/';
+		$folder = APPPATH.$mvc.'/';
 		$arrDir = explode('.', $fileName); 
 		unset($arrDir[count($arrDir)-1]);
 		foreach ( $arrDir as $key => $value) {
@@ -136,13 +130,13 @@ class Pitisan extends CI_Controller {
 		$path = $this->_folder_creator($name, 'controllers');
 
 		// File exist.
-		if ( file_exists(PITISANPATH.'controllers/'.$path.'.php') ) {
+		if ( file_exists(APPPATH.'controllers/'.$path.'.php') ) {
 			echo "This controller file already exists.\n";
 			return false;
 		}
 
 		// Actually write file.
-		if ( ! write_file(PITISANPATH.'controllers/'.$path.'.php',
+		if ( ! write_file(APPPATH.'controllers/'.$path.'.php',
 											$this->_controller_creator($path, $extendsName) ) ) {
 			echo "Unable to write the file.\n";
 			return false;
@@ -178,12 +172,12 @@ class Pitisan extends CI_Controller {
 		$path = $this->_folder_creator($name, 'models');
 
 		// File exist.
-		if ( file_exists(PITISANPATH.'models/'.$path.'_model.php') ) {
+		if ( file_exists(APPPATH.'models/'.$path.'_model.php') ) {
 			echo "This model file already exists.\n";
 			return false;
 		}
 		// Actually write file.
-		if ( ! write_file(PITISANPATH.'models/'.$path.'_model.php',
+		if ( ! write_file(APPPATH.'models/'.$path.'_model.php',
 											$this->_model_creator($path, $table, $primaryKey, $extendsName) ) ) {
 			echo "Unable to write the file.\n";
 			return false;
@@ -219,13 +213,13 @@ class Pitisan extends CI_Controller {
 		unset($params[0]);
 
 		// File exist.
-		if ( file_exists(PITISANPATH.'views/'.$path.'.php') ) {
+		if ( file_exists(APPPATH.'views/'.$path.'.php') ) {
 			echo "This view file already exists.\n";
 			return false;
 		}
 
 		// Actually write file.
-		if ( ! write_file(PITISANPATH.'views/'.$path.'.php',
+		if ( ! write_file(APPPATH.'views/'.$path.'.php',
 											$this->_view_creator($params) ) ) {
 			echo "Unable to write the file.\n";
 			return false;

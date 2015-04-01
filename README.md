@@ -1,8 +1,8 @@
 # Codeigniter-Pitisan
+    Only support Codeigniter 3 version.
     Codeigniter Command Line Tool.
     Like Laravel Artisan.
     It can use command line to create Controller Model View in quickly.
-    Update to Support Codeigniter 3.0 !!
 # Tutorial
     Video in here: http://youtu.be/ciHetNoqTH4
     Sorry about my english skill so bad.
