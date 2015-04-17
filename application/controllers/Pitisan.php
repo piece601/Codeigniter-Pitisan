@@ -14,6 +14,7 @@ class Pitisan extends CI_Controller {
 		parent::__construct();
 		if ( ! $this->input->is_cli_request() ) {
 			echo "This is command line interface tool.";
+			exit();
 			return false;
 		}
 		$this->load->helper('file');
