@@ -41,7 +41,7 @@ class Pitisan extends CI_Controller {
 				$this->view(	isset($params[0]) ? $params[0] : Null, $params);
 				break;
 			case 'all':
-				if ( ! isset($params[0])) {
+				if ( ! $params[0] ) {
 					echo "\n\033[33mUsage:\n\033[0m";
 					echo " all name \n\n";
 					echo "\033[33mArguments:\n\033[0m";
@@ -50,7 +50,8 @@ class Pitisan extends CI_Controller {
 				}
 				$this->controller($params[0], 'MY_Controller');
 				$this->model($params[0], $params[0], $params[0].'Id', 'MY_Model');
-				$this->view($params[0]);
+				$this->view($params[0], $params);
+				break;
 			default:
 				$this->index();
 				break;
