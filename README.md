@@ -32,7 +32,7 @@
     $ptp index.php pitisan controller # 查看 controller 幫助
     $ptp index.php pitisan controller # Watch controller helper
 
-    $php index.php pitisan controller user # 建立 User.php controlelr 檔案到你的 controllers 目錄下
+    $php index.php pitisan controller user # 建立 User.php controller 檔案到你的 controllers 目錄下
     $php index.php pitisan controller user # Create User.php controller file in controllers folder.
 
     $php index.php pitisan controller admin.user # 建立 User.php controller 檔案到 controllers/admin 目錄下
